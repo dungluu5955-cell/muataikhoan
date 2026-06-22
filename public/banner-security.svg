@@ -1,0 +1,40 @@
+<svg width="1600" height="620" viewBox="0 0 1600 620" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="620" rx="42" fill="url(#bg)"/>
+  <rect x="54" y="88" width="480" height="444" rx="36" fill="url(#left)"/>
+  <circle cx="290" cy="312" r="126" fill="#FFFFFF" fill-opacity="0.16"/>
+  <path d="M290 208L392 250V322C392 388 349 438 290 464C231 438 188 388 188 322V250L290 208Z" fill="#FFFFFF" fill-opacity="0.92"/>
+  <path d="M290 268C320 268 344 292 344 322C344 352 320 376 290 376C260 376 236 352 236 322C236 292 260 268 290 268Z" fill="#23B790"/>
+  <rect x="706" y="104" width="396" height="94" rx="47" fill="white" fill-opacity="0.88"/>
+  <circle cx="772" cy="151" r="28" fill="#E8F8FF"/>
+  <rect x="816" y="134" width="198" height="34" rx="17" fill="#0C6FFF"/>
+  <rect x="706" y="230" width="396" height="94" rx="47" fill="white" fill-opacity="0.88"/>
+  <circle cx="772" cy="277" r="28" fill="#EEFCEB"/>
+  <rect x="816" y="260" width="228" height="34" rx="17" fill="#16A772"/>
+  <rect x="706" y="356" width="396" height="94" rx="47" fill="white" fill-opacity="0.88"/>
+  <circle cx="772" cy="403" r="28" fill="#FFF7EA"/>
+  <rect x="816" y="386" width="208" height="34" rx="17" fill="#F99522"/>
+  <g>
+    <rect x="1160" y="98" width="384" height="428" rx="34" fill="white" fill-opacity="0.45"/>
+    <rect x="1208" y="138" width="128" height="96" rx="28" fill="white"/>
+    <rect x="1362" y="138" width="128" height="96" rx="28" fill="white"/>
+    <rect x="1208" y="258" width="128" height="96" rx="28" fill="white"/>
+    <rect x="1362" y="258" width="128" height="96" rx="28" fill="white"/>
+    <rect x="1285" y="382" width="128" height="96" rx="28" fill="white"/>
+    <text x="1243" y="195" font-family="Arial" font-size="26" font-weight="700" fill="#6D44FF">VPN</text>
+    <text x="1388" y="194" font-family="Arial" font-size="24" font-weight="700" fill="#2B6AF8">HMA</text>
+    <text x="1234" y="315" font-family="Arial" font-size="22" font-weight="700" fill="#13A772">NORD</text>
+    <text x="1391" y="315" font-family="Arial" font-size="22" font-weight="700" fill="#19A6E6">CLOUD</text>
+    <text x="1326" y="440" font-family="Arial" font-size="24" font-weight="700" fill="#213B95">SAFE</text>
+  </g>
+  <defs>
+    <linearGradient id="bg" x1="30" y1="14" x2="1548" y2="608" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ECF8FF"/>
+      <stop offset="0.45" stop-color="#EFFFFB"/>
+      <stop offset="1" stop-color="#F4F2FF"/>
+    </linearGradient>
+    <linearGradient id="left" x1="64" y1="86" x2="480" y2="514" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#13B8E6"/>
+      <stop offset="1" stop-color="#1761EB"/>
+    </linearGradient>
+  </defs>
+</svg>

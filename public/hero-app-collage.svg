@@ -1,0 +1,85 @@
+<svg width="520" height="320" viewBox="0 0 520 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="520" height="320" rx="36" fill="url(#bg)"/>
+  <g filter="url(#shadow)">
+    <rect x="28" y="32" width="72" height="72" rx="22" fill="white"/>
+    <text x="64" y="76" text-anchor="middle" font-size="24" font-family="Arial" font-weight="700" fill="#5B51FF">Ps</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="118" y="32" width="72" height="72" rx="22" fill="white"/>
+    <text x="154" y="76" text-anchor="middle" font-size="22" font-family="Arial" font-weight="700" fill="#FF4D35">Ai</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="208" y="32" width="72" height="72" rx="22" fill="white"/>
+    <text x="244" y="76" text-anchor="middle" font-size="19" font-family="Arial" font-weight="700" fill="#14A673">Drive</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="298" y="32" width="72" height="72" rx="22" fill="white"/>
+    <text x="334" y="76" text-anchor="middle" font-size="18" font-family="Arial" font-weight="700" fill="#2D78FF">365</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="388" y="32" width="72" height="72" rx="22" fill="white"/>
+    <text x="424" y="76" text-anchor="middle" font-size="18" font-family="Arial" font-weight="700" fill="#4A9BFF">iCloud</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="52" y="124" width="72" height="72" rx="22" fill="white"/>
+    <circle cx="88" cy="160" r="22" fill="#111"/>
+    <text x="88" y="168" text-anchor="middle" font-size="18" font-family="Arial" font-weight="700" fill="#E50914">N</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="142" y="124" width="72" height="72" rx="22" fill="white"/>
+    <circle cx="178" cy="160" r="24" fill="#FF2323"/>
+    <polygon points="170,146 170,174 192,160" fill="white"/>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="232" y="124" width="72" height="72" rx="22" fill="white"/>
+    <circle cx="268" cy="160" r="24" fill="#25D366"/>
+    <path d="M255 160C255 151 262 144 271 144C280 144 287 151 287 160C287 169 280 176 271 176C262 176 255 169 255 160Z" fill="#1DB954"/>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="322" y="124" width="72" height="72" rx="22" fill="white"/>
+    <text x="358" y="166" text-anchor="middle" font-size="19" font-family="Arial" font-weight="700" fill="#FD6A02">Sound</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="412" y="124" width="72" height="72" rx="22" fill="white"/>
+    <text x="448" y="166" text-anchor="middle" font-size="18" font-family="Arial" font-weight="700" fill="#FF4F81">Music</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="28" y="216" width="72" height="72" rx="22" fill="white"/>
+    <text x="64" y="260" text-anchor="middle" font-size="18" font-family="Arial" font-weight="700" fill="#7B57FF">VPN</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="118" y="216" width="72" height="72" rx="22" fill="white"/>
+    <text x="154" y="260" text-anchor="middle" font-size="18" font-family="Arial" font-weight="700" fill="#96C11F">Vion</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="208" y="216" width="72" height="72" rx="22" fill="white"/>
+    <text x="244" y="260" text-anchor="middle" font-size="18" font-family="Arial" font-weight="700" fill="#2F63FF">Elsa</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="298" y="216" width="72" height="72" rx="22" fill="white"/>
+    <text x="334" y="260" text-anchor="middle" font-size="16" font-family="Arial" font-weight="700" fill="#FDBF18">Memrise</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="388" y="216" width="72" height="72" rx="22" fill="white"/>
+    <text x="424" y="260" text-anchor="middle" font-size="18" font-family="Arial" font-weight="700" fill="#10A37F">GPT</text>
+  </g>
+  <defs>
+    <linearGradient id="bg" x1="30" y1="20" x2="500" y2="300" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF9FF"/>
+      <stop offset="0.4" stop-color="#F5F7FF"/>
+      <stop offset="1" stop-color="#F8FFFE"/>
+    </linearGradient>
+    <filter id="shadow" x="12" y="20" width="100" height="100" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="8"/>
+      <feGaussianBlur stdDeviation="8"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.47 0 0 0 0 0.51 0 0 0 0 0.74 0 0 0 0.16 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_2"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_2" result="shape"/>
+    </filter>
+  </defs>
+</svg>

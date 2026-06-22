@@ -1,0 +1,48 @@
+<svg width="1600" height="620" viewBox="0 0 1600 620" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="620" rx="42" fill="url(#bg)"/>
+  <rect x="48" y="86" width="520" height="450" rx="36" fill="url(#left)"/>
+  <circle cx="304" cy="300" r="120" fill="#FFFFFF" fill-opacity="0.1"/>
+  <rect x="138" y="210" width="308" height="174" rx="34" fill="#24124F"/>
+  <circle cx="292" cy="297" r="54" fill="url(#play)"/>
+  <polygon points="280,270 280,324 328,297" fill="white"/>
+  <circle cx="180" cy="168" r="32" fill="#FF59B4"/>
+  <circle cx="248" cy="132" r="28" fill="#FFA31F"/>
+  <circle cx="428" cy="170" r="26" fill="#FFD85D"/>
+  <rect x="650" y="110" width="416" height="94" rx="47" fill="white" fill-opacity="0.88"/>
+  <circle cx="716" cy="157" r="28" fill="#FFE9F5"/>
+  <rect x="760" y="140" width="210" height="34" rx="17" fill="#DA2EFF"/>
+  <rect x="650" y="236" width="416" height="94" rx="47" fill="white" fill-opacity="0.88"/>
+  <circle cx="716" cy="283" r="28" fill="#FFF4E7"/>
+  <rect x="760" y="266" width="234" height="34" rx="17" fill="#FF7A1A"/>
+  <rect x="650" y="362" width="416" height="94" rx="47" fill="white" fill-opacity="0.88"/>
+  <circle cx="716" cy="409" r="28" fill="#EAF1FF"/>
+  <rect x="760" y="392" width="254" height="34" rx="17" fill="#4A4BFF"/>
+  <g>
+    <rect x="1140" y="92" width="402" height="438" rx="34" fill="white" fill-opacity="0.42"/>
+    <rect x="1190" y="138" width="124" height="124" rx="30" fill="white"/>
+    <rect x="1336" y="138" width="124" height="124" rx="30" fill="white"/>
+    <rect x="1190" y="284" width="124" height="124" rx="30" fill="white"/>
+    <rect x="1336" y="284" width="124" height="124" rx="30" fill="white"/>
+    <text x="1228" y="210" font-family="Arial" font-size="26" font-weight="700" fill="#E50914">N</text>
+    <text x="1364" y="212" font-family="Arial" font-size="24" font-weight="700" fill="#FF2732">YT</text>
+    <text x="1211" y="355" font-family="Arial" font-size="23" font-weight="700" fill="#1DB954">SPOT</text>
+    <text x="1360" y="356" font-family="Arial" font-size="22" font-weight="700" fill="#FF5A92">MUSIC</text>
+    <rect x="1264" y="438" width="124" height="54" rx="22" fill="white"/>
+    <text x="1288" y="472" font-family="Arial" font-size="22" font-weight="700" fill="#7041FF">BH FULLTIME</text>
+  </g>
+  <defs>
+    <linearGradient id="bg" x1="32" y1="12" x2="1546" y2="608" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F0EEFF"/>
+      <stop offset="0.5" stop-color="#FFF1FA"/>
+      <stop offset="1" stop-color="#F7F9FF"/>
+    </linearGradient>
+    <linearGradient id="left" x1="68" y1="92" x2="526" y2="514" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4F3FFF"/>
+      <stop offset="1" stop-color="#C53BFF"/>
+    </linearGradient>
+    <linearGradient id="play" x1="238" y1="245" x2="346" y2="348" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF54BF"/>
+      <stop offset="1" stop-color="#5B59FF"/>
+    </linearGradient>
+  </defs>
+</svg>

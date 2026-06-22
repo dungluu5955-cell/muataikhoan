@@ -18,10 +18,13 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
   }
 
   const amount = product.salePriceValue ?? product.priceValue ?? 0;
-  const galleryImages = (product.images ?? []).map((item, index) => ({
-    imageUrl: item.imageUrl,
-    alt: `${product.title} ${index + 1}`
-  }));
+  const galleryImages = [
+    ...(product.thumbnailUrl ? [{ imageUrl: product.thumbnailUrl, alt: product.title }] : []),
+    ...(product.images ?? []).map((item, index) => ({
+      imageUrl: item.imageUrl,
+      alt: `${product.title} ${index + 1}`
+    }))
+  ];
 
   return (
     <div className="shell py-16">

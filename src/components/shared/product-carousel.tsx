@@ -89,7 +89,7 @@ export function ProductCarousel({ products }: ProductCarouselProps) {
             >
               <Link
                 href={`/san-pham/${product.slug}`}
-                className="block overflow-hidden rounded-[22px] bg-white shadow-[0_14px_34px_rgba(28,20,60,0.14)] transition-transform hover:-translate-y-1"
+                className="flex h-full flex-col overflow-hidden rounded-[22px] bg-white shadow-[0_14px_34px_rgba(28,20,60,0.14)] transition-transform hover:-translate-y-1"
               >
                 <div className="relative aspect-[4/3.2] w-full overflow-hidden bg-[#f5f3ff]">
                   {product.thumbnailUrl ? (
@@ -102,15 +102,17 @@ export function ProductCarousel({ products }: ProductCarouselProps) {
                     <div className="h-0 w-0 border-r-[10px] border-t-[10px] border-r-transparent border-t-[#a80d08]" />
                   </div>
                 </div>
-                <div className="p-3.5">
-                  <p className="line-clamp-2 text-lg font-semibold leading-7 tracking-tight text-ink">{product.title}</p>
-                  <p className="mt-2 line-clamp-2 text-sm leading-5 text-slate-600">
+                <div className="flex flex-1 flex-col p-3.5">
+                  <p className="min-h-[3.5rem] line-clamp-2 text-lg font-semibold leading-7 tracking-tight text-ink">{product.title}</p>
+                  <p className="mt-2 min-h-[2.5rem] line-clamp-2 text-sm leading-5 text-slate-600">
                     {product.shortDescription || product.description}
                   </p>
-                  <div className="mt-2.5 space-y-1">
+                  <div className="mt-auto min-h-[4.75rem] pt-2.5">
                     {product.salePriceLabel ? (
                       <p className="text-base font-semibold text-slate-400 line-through">{product.priceLabel.replace("d", "đ")}</p>
-                    ) : null}
+                    ) : (
+                      <div className="h-6" />
+                    )}
                     <p className="text-2xl font-bold text-[#ef3d32]">
                       {(product.salePriceLabel ?? product.priceLabel).replace("d", "đ")}
                     </p>

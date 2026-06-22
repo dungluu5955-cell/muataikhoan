@@ -109,8 +109,8 @@ export default async function PublicLayout({ children }: Readonly<{ children: Re
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-500">Liên hệ</p>
             <div className="mt-3 space-y-2 text-sm text-slate-600">
-              <p>SĐT / Zalo: 0234235345</p>
-              <p>Email: abcd@gmail.com</p>
+              <p>SĐT / Zalo: 0913079896</p>
+              <p>Email: congtyvuonratg@gmail.com</p>
             </div>
           </div>
         </div>

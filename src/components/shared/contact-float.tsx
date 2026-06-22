@@ -1,7 +1,7 @@
 export function ContactFloat() {
   const items = [
     {
-      href: "https://zalo.me/0234235345",
+      href: "https://zalo.me/0913079896",
       label: "Chat Zalo",
       bg: "from-[#0a7cff] to-[#32a7ff]",
       shadow: "shadow-[0_18px_36px_rgba(10,124,255,0.35)]",
@@ -12,7 +12,7 @@ export function ContactFloat() {
       )
     },
     {
-      href: "mailto:abcd@gmail.com",
+      href: "mailto:congtyvuonratg@gmail.com",
       label: "Gửi email",
       bg: "from-[#ff6b57] to-[#ff8a3d]",
       shadow: "shadow-[0_18px_36px_rgba(255,107,87,0.32)]",

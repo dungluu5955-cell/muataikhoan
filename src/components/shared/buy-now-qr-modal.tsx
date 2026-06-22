@@ -117,11 +117,11 @@ export function BuyNowQrModal({ product, amount }: BuyNowQrModalProps) {
               )}
               <p className="mt-3 text-slate-600">Sau khi chuyển khoản, vui lòng liên hệ Zalo hoặc email để xác nhận.</p>
               <div className="mt-2 space-y-1 text-slate-700">
-                <a className="block font-medium text-brand hover:underline" href="https://zalo.me/0234235345" target="_blank" rel="noreferrer">
-                  Zalo: 0234235345
+                <a className="block font-medium text-brand hover:underline" href="https://zalo.me/0913079896" target="_blank" rel="noreferrer">
+                  Zalo: 0913079896
                 </a>
-                <a className="block font-medium text-brand hover:underline" href="mailto:abcd@gmail.com">
-                  Email: abcd@gmail.com
+                <a className="block font-medium text-brand hover:underline" href="mailto:congtyvuonratg@gmail.com">
+                  Email: congtyvuonratg@gmail.com
                 </a>
               </div>
             </div>

@@ -24,7 +24,6 @@ export type SampleProduct = {
   description: string;
   thumbnailUrl?: string;
   isFeatured?: boolean;
-  contactLink?: string | null;
   attributes: ProductAttributeView[];
   images?: ProductImageView[];
 };

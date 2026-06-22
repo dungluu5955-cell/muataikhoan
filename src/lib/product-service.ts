@@ -40,7 +40,6 @@ function mapDbProduct(product: {
   attributes?: { label: string; value: string; sortOrder: number }[];
   thumbnailUrl?: string;
   isFeatured?: boolean;
-  contactLink?: string | null;
 }) {
   const rawPrice = decimalLikeToValue(product.price);
   const rawSalePrice = decimalLikeToValue(product.salePrice);
@@ -62,7 +61,6 @@ function mapDbProduct(product: {
     description: product.description,
     thumbnailUrl: product.thumbnailUrl ?? "",
     isFeatured: product.isFeatured ?? false,
-    contactLink: product.contactLink ?? null,
     attributes: (product.attributes ?? []).map((item) => ({
       label: item.label,
       value: item.value
@@ -82,7 +80,6 @@ function normalizeInput(input: ProductInput) {
     sku: input.sku || null,
     shortDescription: input.shortDescription || null,
     thumbnailPublicId: input.thumbnailPublicId || null,
-    contactLink: input.contactLink || null,
     categoryDescription: input.categoryDescription || null,
     salePrice:
       input.salePrice === undefined || input.salePrice === null || input.salePrice === ""
@@ -206,7 +203,6 @@ export async function createProduct(payload: unknown) {
       thumbnailUrl: input.thumbnailUrl,
       thumbnailPublicId: input.thumbnailPublicId,
       isFeatured: input.isFeatured,
-      contactLink: input.contactLink,
       attributes: {
         create: input.attributes.map((attribute, index) => ({
           label: attribute.label,
@@ -260,7 +256,6 @@ export async function updateProduct(id: string, payload: unknown) {
       thumbnailUrl: input.thumbnailUrl,
       thumbnailPublicId: input.thumbnailPublicId,
       isFeatured: input.isFeatured,
-      contactLink: input.contactLink,
       attributes: {
         deleteMany: {},
         create: input.attributes.map((attribute, index) => ({

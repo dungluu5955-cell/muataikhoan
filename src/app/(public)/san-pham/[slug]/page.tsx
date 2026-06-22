@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { BuyNowQrModal } from "@/components/shared/buy-now-qr-modal";
+import { ProductGallery } from "@/components/shared/product-gallery";
 import { getPublicProductBySlug } from "@/lib/product-service";
 
 type ProductDetailPageProps = {
@@ -15,14 +16,22 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
   }
 
   const amount = product.salePriceValue ?? product.priceValue ?? 0;
+  const galleryImages = (product.images ?? []).map((item, index) => ({
+    imageUrl: item.imageUrl,
+    alt: `${product.title} ${index + 1}`
+  }));
 
   return (
     <div className="shell py-16">
       <div className="grid gap-8 lg:grid-cols-[1fr_0.9fr]">
         <div className="card-surface min-h-[420px] p-6">
-          <div className="flex h-full items-center justify-center rounded-2xl border border-dashed border-line bg-mist text-sm text-slate-500">
-            Khu vực gallery sản phẩm
-          </div>
+          {galleryImages.length > 0 ? (
+            <ProductGallery images={galleryImages} />
+          ) : (
+            <div className="flex h-full items-center justify-center rounded-2xl border border-dashed border-line bg-mist text-sm text-slate-500">
+              Khu vực gallery sản phẩm
+            </div>
+          )}
         </div>
         <div className="card-surface p-8">
           <h1 className="mt-4 text-3xl font-semibold tracking-tight">{product.title}</h1>

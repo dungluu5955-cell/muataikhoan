@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import type { SampleProduct } from "@/types/product";
@@ -91,6 +92,9 @@ export function ProductCarousel({ products }: ProductCarouselProps) {
                 className="group block overflow-hidden rounded-[24px] border border-[#ecd7d0] bg-white shadow-[0_18px_44px_rgba(16,20,24,0.08)] transition-transform hover:-translate-y-1"
               >
                 <div className="relative aspect-[16/9] overflow-hidden bg-[linear-gradient(135deg,_rgba(228,75,45,0.20),_rgba(18,122,95,0.12))]">
+                  {product.thumbnailUrl ? (
+                    <Image src={product.thumbnailUrl} alt={product.title} fill className="object-cover" />
+                  ) : null}
                   <div className="absolute left-0 top-0 z-10">
                     <div className="rounded-br-[18px] rounded-tr-[18px] bg-[#ff1d14] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.14em] text-white shadow-[0_10px_24px_rgba(255,29,20,0.34)]">
                       Hot deal
@@ -109,8 +113,12 @@ export function ProductCarousel({ products }: ProductCarouselProps) {
                   <p className="mt-2 line-clamp-2 text-sm leading-6 text-slate-600">{product.shortDescription}</p>
                   <div className="mt-4">
                     <div>
-                      <p className="text-xs uppercase tracking-[0.18em] text-slate-400">Giá ưu đãi</p>
-                      <p className="mt-1 text-xl font-semibold text-brand">{product.priceLabel.replace("d", "đ")}</p>
+                      <p className="text-xs uppercase tracking-[0.18em] text-slate-400">
+                        {product.salePriceLabel ? "Giá khuyến mãi" : "Giá"}
+                      </p>
+                      <p className="mt-1 text-xl font-semibold text-brand">
+                        {(product.salePriceLabel ?? product.priceLabel).replace("d", "đ")}
+                      </p>
                     </div>
                   </div>
                 </div>

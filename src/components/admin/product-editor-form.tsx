@@ -31,10 +31,32 @@ type ProductFormState = {
   thumbnailImages: UploadedImage[];
   galleryImages: UploadedImage[];
   isFeatured: boolean;
-  contactLink: string;
   warranty: string;
   delivery: string;
   note: string;
+};
+
+type ValidationIssues = {
+  fieldErrors?: Record<string, string[] | undefined>;
+  formErrors?: string[];
+};
+
+const fieldLabels: Record<string, string> = {
+  title: "Tiêu đề",
+  slug: "Slug",
+  category: "Danh mục",
+  categoryDescription: "Mô tả danh mục",
+  price: "Giá",
+  salePrice: "Giá khuyến mãi",
+  originalPrice: "Giá gốc",
+  status: "Trạng thái",
+  shortDescription: "Mô tả ngắn",
+  description: "Mô tả chi tiết",
+  thumbnailUrl: "Ảnh đại diện",
+  thumbnailPublicId: "Mã ảnh đại diện",
+  isFeatured: "Sản phẩm nổi bật",
+  attributes: "Thuộc tính sản phẩm",
+  images: "Thư viện ảnh"
 };
 
 function getAttributeValue(attributes: ProductAttributeView[] | undefined, label: string) {
@@ -68,7 +90,6 @@ function buildInitialState(initialProduct?: SampleProduct | null): ProductFormSt
       publicId: item.publicId ?? null
     })),
     isFeatured: initialProduct?.isFeatured ?? false,
-    contactLink: initialProduct?.contactLink ?? "",
     warranty: getAttributeValue(initialProduct?.attributes, "Bảo hành"),
     delivery: getAttributeValue(initialProduct?.attributes, "Bàn giao"),
     note: getAttributeValue(initialProduct?.attributes, "Ghi chú")
@@ -85,11 +106,13 @@ export function ProductEditorForm({
   const [form, setForm] = useState<ProductFormState>(() => buildInitialState(initialProduct));
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
+  const [validationErrors, setValidationErrors] = useState<string[]>([]);
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setIsSubmitting(true);
     setMessage(null);
+    setValidationErrors([]);
 
     const payload = {
       title: form.title,
@@ -102,7 +125,6 @@ export function ProductEditorForm({
       thumbnailUrl: form.thumbnailImages[0]?.imageUrl,
       thumbnailPublicId: form.thumbnailImages[0]?.publicId ?? "",
       isFeatured: form.isFeatured,
-      contactLink: form.contactLink,
       images: form.galleryImages.map((item, index) => ({
         imageUrl: item.imageUrl,
         publicId: item.publicId ?? "",
@@ -124,7 +146,21 @@ export function ProductEditorForm({
       body: JSON.stringify(payload)
     });
 
-    const result = (await response.json()) as { message?: string; item?: { id?: string } };
+    const result = (await response.json()) as {
+      message?: string;
+      item?: { id?: string };
+      issues?: ValidationIssues;
+    };
+
+    if (!response.ok && result.issues) {
+      const fieldErrors = Object.entries(result.issues.fieldErrors ?? {})
+        .flatMap(([field, errors]) =>
+          (errors ?? []).map((error) => `${fieldLabels[field] ?? field}: ${error}`)
+        );
+      const formErrors = result.issues.formErrors ?? [];
+      setValidationErrors([...fieldErrors, ...formErrors]);
+    }
+
     setMessage(result.message ?? (response.ok ? "Đã lưu sản phẩm." : "Không thể lưu sản phẩm."));
     setIsSubmitting(false);
 
@@ -226,14 +262,6 @@ export function ProductEditorForm({
               />
               <span>Đánh dấu nổi bật</span>
             </label>
-            <label className="grid gap-2 text-sm text-slate-300">
-              <span>Link liên hệ</span>
-              <input
-                value={form.contactLink}
-                onChange={(event) => setForm((current) => ({ ...current, contactLink: event.target.value }))}
-                className="rounded-2xl border border-slate-700 bg-slate-950 px-4 py-3 text-white outline-none"
-              />
-            </label>
           </div>
         </div>
         <div className="rounded-3xl border border-slate-800 bg-slate-900 p-6">
@@ -310,6 +338,16 @@ export function ProductEditorForm({
           </label>
         </div>
       </div>
+      {validationErrors.length > 0 ? (
+        <div className="rounded-3xl border border-red-500/40 bg-red-500/10 p-4 text-sm text-red-100">
+          <p className="font-semibold">Các trường cần kiểm tra lại:</p>
+          <ul className="mt-2 list-disc space-y-1 pl-5 text-red-100/90">
+            {validationErrors.map((error) => (
+              <li key={error}>{error}</li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
       <div className="flex flex-wrap items-center justify-end gap-4">
         {mode === "edit" && productId && initialProduct ? (
           <AdminDeleteProductButton

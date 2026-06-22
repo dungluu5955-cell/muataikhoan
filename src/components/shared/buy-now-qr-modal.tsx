@@ -17,7 +17,7 @@ function getQrImageSrc(product: SampleProduct, amount: number) {
   const accountNumber = process.env.NEXT_PUBLIC_BANK_ACCOUNT_NUMBER?.trim();
   const accountName = process.env.NEXT_PUBLIC_BANK_ACCOUNT_NAME?.trim();
   const transferContent =
-    process.env.NEXT_PUBLIC_BANK_TRANSFER_CONTENT?.trim() || `MUA ${product.slug.toUpperCase()}`;
+    process.env.NEXT_PUBLIC_BANK_TRANSFER_CONTENT?.trim() || product.slug.toUpperCase();
 
   if (bankCode && accountNumber && accountName) {
     return `https://img.vietqr.io/image/${bankCode}-${accountNumber}-compact2.png?amount=${amount}&addInfo=${encodeURIComponent(transferContent)}&accountName=${encodeURIComponent(accountName)}`;
@@ -61,7 +61,7 @@ export function BuyNowQrModal({ product, amount }: BuyNowQrModalProps) {
   const accountNumber = process.env.NEXT_PUBLIC_BANK_ACCOUNT_NUMBER?.trim();
   const accountName = process.env.NEXT_PUBLIC_BANK_ACCOUNT_NAME?.trim();
   const transferContent =
-    process.env.NEXT_PUBLIC_BANK_TRANSFER_CONTENT?.trim() || `MUA ${product.slug.toUpperCase()}`;
+    process.env.NEXT_PUBLIC_BANK_TRANSFER_CONTENT?.trim() || product.slug.toUpperCase();
   const hasBankConfig = Boolean(bankCode && accountNumber && accountName);
 
   return (
@@ -115,6 +115,15 @@ export function BuyNowQrModal({ product, amount }: BuyNowQrModalProps) {
               ) : (
                 <p className="mt-2 text-slate-500">Chưa cấu hình `NEXT_PUBLIC_BANK_CODE`, `NEXT_PUBLIC_BANK_ACCOUNT_NUMBER`, `NEXT_PUBLIC_BANK_ACCOUNT_NAME`.</p>
               )}
+              <p className="mt-3 text-slate-600">Sau khi chuyển khoản, vui lòng liên hệ Zalo hoặc email để xác nhận.</p>
+              <div className="mt-2 space-y-1 text-slate-700">
+                <a className="block font-medium text-brand hover:underline" href="https://zalo.me/0234235345" target="_blank" rel="noreferrer">
+                  Zalo: 0234235345
+                </a>
+                <a className="block font-medium text-brand hover:underline" href="mailto:abcd@gmail.com">
+                  Email: abcd@gmail.com
+                </a>
+              </div>
             </div>
           </div>
         </div>

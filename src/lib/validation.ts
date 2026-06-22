@@ -22,7 +22,6 @@ export const productInputSchema = z.object({
   thumbnailUrl: z.string().url(),
   thumbnailPublicId: z.string().max(255).optional().nullable(),
   isFeatured: z.boolean().default(false),
-  contactLink: z.string().url().optional().nullable(),
   attributes: z.array(productAttributeInputSchema).default([]),
   images: z
     .array(

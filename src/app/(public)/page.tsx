@@ -8,6 +8,8 @@ import { ProductGrid } from "@/components/shared/product-grid";
 import { PromotionCarousel } from "@/components/shared/promotion-carousel";
 import { getPromotionProducts, getPublicProducts } from "@/lib/product-service";
 
+export const dynamic = "force-dynamic";
+
 export default async function HomePage() {
   const products = await getPublicProducts();
   const categories = await getCategories();

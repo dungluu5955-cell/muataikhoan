@@ -11,6 +11,8 @@ type ProductsPageProps = {
 
 const PRODUCTS_PER_PAGE = 12;
 
+export const dynamic = "force-dynamic";
+
 export default async function ProductsPage({ searchParams }: ProductsPageProps) {
   const products = await getPublicProducts();
   const resolvedSearchParams = searchParams ? await searchParams : {};

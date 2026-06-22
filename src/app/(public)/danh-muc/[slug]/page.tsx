@@ -7,6 +7,8 @@ type CategoryDetailPageProps = {
   params: Promise<{ slug: string }>;
 };
 
+export const dynamic = "force-dynamic";
+
 export default async function CategoryDetailPage({ params }: CategoryDetailPageProps) {
   const { slug } = await params;
   const category = await getCategoryBySlug(slug);
